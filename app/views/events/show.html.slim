@@ -1,0 +1,11 @@
+.container
+  .row
+    / .large_image
+    /   = image_tag event.avatar.url(:large)
+    .name
+      h3 = link_to event.name, event
+    .description
+      = event.description
+    .date
+      = event.start_date
+      = event.finish_date

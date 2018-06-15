@@ -3,9 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
+gem 'decent_exposure', '3.0.0'
+gem 'decent_decoration', '~> 0.1.0'
+gem 'draper'
 gem 'rails', '~> 5.2.0'
+gem 'responders'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'

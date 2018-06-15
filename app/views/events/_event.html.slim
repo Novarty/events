@@ -1,0 +1,6 @@
+.card
+  / .image
+    = image_tag product.avatar.url(:medium)
+  .title
+    h3 = link_to event.name, event
+    p.card-text = event.truncated_description
