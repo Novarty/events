@@ -1,0 +1,13 @@
+.container
+  .form-signin
+    = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+      .panel.panel-default.panel-body
+        h1 Resend confirmation instructions
+        .field
+          = f.input :email, autocomplete: "email",
+          value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+        .actions
+          = f.submit "Resend confirmation instructions",
+          class: "btn btn-lg btn-success"
+      = render "devise/shared/links"
