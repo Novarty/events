@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
-  expose_decorated :events, -> { Event.all }
+  expose_decorated :events, -> { init_events }
   expose_decorated :event
 
   def index; end
@@ -10,16 +10,9 @@ class EventsController < ApplicationController
 
   def new; end
 
-  def edit; end
-
   def create
     event.user = current_user
     event.save
-    respond_with event
-  end
-
-  def update
-    event.update(event_params)
     respond_with event
   end
 
@@ -30,7 +23,15 @@ class EventsController < ApplicationController
       :name,
       :description,
       :start_date,
-      :finish_date
+      :finish_date,
+      :all_tags,
+      :photo
     )
+  end
+
+  def init_events
+    events = Event.all
+    events = Event.tagged_with(params[:tag]) if params[:tag]
+    events #returns
   end
 end

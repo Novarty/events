@@ -1,3 +1,41 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+dt {
+  font-size: 20px;
+}
+dd {
+  font-size: 16px;
+}
+p {
+  font-size: 16px;
+}
+.field {
+  margin-bottom: 15px;
+}
+.title-field{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.actions {
+  margin-bottom: 10px;
+}
+.title{
+  text-align: center;
+}
+.card{
+  margin: 0 3px 25px 4px;
+}
+.content_center{
+  margin: 0, auto;
+}
+.image{
+  margin: 0 auto;
+  height: 200px;
+}
+.large_image{
+  margin: 0 auto;
+  padding: 5px 5px;
+}
+.description_of_event{
+  font-size: 17px;
+  margin-bottom: 5px;
+  color: grey;
+}

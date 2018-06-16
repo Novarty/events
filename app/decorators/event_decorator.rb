@@ -21,7 +21,7 @@ class EventDecorator < ApplicationDecorator
 
   def get_finish_time
     helpers.content_tag :span, class: 'time' do
-      object.start_date.strftime("%H:%M")
+      object.finish_date.strftime("%H:%M")
     end
   end
 
