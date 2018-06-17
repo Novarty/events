@@ -1,0 +1,14 @@
+.col-md-8.col-md-offset-2
+  .title-field.title
+    h2 = link_to event.name, event
+  hr
+  .large_image.
+    = image_tag event.photo.url(:large)
+  hr
+  dl
+    dt Description
+    dd.description_of_event = event.description
+    dt Date of event
+    dd.field.text-success = event.get_start_date + "-" + event.get_finish_time
+    dt Tags
+    dd.field = raw tag_links(event.all_tags)

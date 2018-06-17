@@ -1,0 +1,15 @@
+.col-md-8.col-md-offset-2
+  = simple_form_for event do |f|
+    = f.error_notification
+    = f.input :name
+    p Add photo
+    = f.input :photo, as: :file, label:false
+    = f.input :description, as: :text
+    = f.input :start_date, wrapper: :horizontal_select_date
+    = f.input :finish_date, wrapper: :horizontal_select_date
+    = f.input :all_tags,
+              label: "Tags",
+              placeholder: "Tags separated with comma",
+              error: "Specify at least one tag"
+    = f.button :submit, class: 'btn-success'
+    = link_to "Back", :back, class: 'btn btn-outline-link'

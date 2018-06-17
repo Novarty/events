@@ -1,0 +1,9 @@
+.col-md-4.panel.panel-info.card
+  h3.title-field = link_to event.name, event
+  .image
+    = image_tag event.photo.url(:medium)
+  h4.field = event.truncated_description
+  p.text-success
+    = event.get_start_date
+  hr
+  p.field = raw tag_links(event.all_tags)
