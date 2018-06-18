@@ -7,9 +7,11 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
-  has_attached_file :photo, 
+  has_many :members
+  has_many :events, through: :members, dependent: :destroy
+  has_attached_file :photo,
                     styles: {
-                      medium: "355x266>",
+                      medium: "355x200>",
                       large: "802.5x535" }
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 

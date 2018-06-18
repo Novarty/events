@@ -1,0 +1,7 @@
+#member-form
+  = simple_form_for event.members.new, remote:true do |f|
+    = f.error_notification
+    = f.input :name
+    = f.input :phone, as: :tel
+    = f.hidden_field :event_id, value: event.id
+    = f.submit data: { "disable-with": "Saving..." }, class: "btn btn-primary"

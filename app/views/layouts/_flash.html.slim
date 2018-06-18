@@ -1,0 +1,5 @@
+.container
+  .row
+    .col-md-4
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: name

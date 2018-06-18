@@ -4,10 +4,11 @@ nav.navbar.navbar-default
       = link_to "Events", root_path, class: "navbar-brand"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        - if current_page?(new_event_path)
-          li.active = link_to "Create new event", new_event_path
-        - else
-          li = link_to "Create new event", new_event_path
+        - if user_signed_in?
+          - if current_page?(new_event_path)
+            li.active = link_to "Create new event", new_event_path
+          - else
+            li = link_to "Create new event", new_event_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li.dropdown

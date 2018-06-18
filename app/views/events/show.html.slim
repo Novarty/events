@@ -12,3 +12,9 @@
     dd.field.text-success = event.get_start_date + "-" + event.get_finish_time
     dt Tags
     dd.field = raw tag_links(event.all_tags)
+  hr
+  = render "members/form"
+  hr
+  dt Members list
+  ul.list-unstyled#members-container
+    = render event.members
