@@ -13,8 +13,14 @@
     dt Tags
     dd.field = raw tag_links(event.all_tags)
   hr
-  = render "members/form"
-  hr
-  dt Members list
-  ul.list-unstyled#members-container
-    = render event.members
+  - if user_signed_in?
+    = render "members/form"
+    hr
+    dt Members list
+    ul.list-unstyled#members-container
+      = render event.members
+  - else
+    dt.text-warning
+     => link_to "Sign in", user_session_path
+     | to register for the event and to see the list of participants
+    hr
