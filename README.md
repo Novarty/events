@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Quick Start
+```bash
+# clone project
+git clone git@github.com:Novarty/events.git
+cd events
 
-Things you may want to cover:
+# install gems
+bundle install
 
-* Ruby version
+# configure DB
+rails db:setup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# run server on 3000 port
+rails s
+```
